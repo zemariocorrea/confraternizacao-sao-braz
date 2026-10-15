@@ -1,0 +1,706 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Painel | Confraternização 2026</title>
+    <style nonce="{{NONCE}}">
+        :root {
+            --bg: #F2F5F8;
+            --ink: #123057;
+            --green: #184074;
+            --border: #D8E1ED;
+            --muted: #596F8B;
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--ink);
+            font-family: system-ui, Arial, sans-serif;
+            line-height: 1.5;
+        }
+
+        .wrap {
+            width: min(1120px, calc(100% - 30px));
+            margin: auto;
+        }
+
+        .top {
+            background: #112D51;
+            color: #fff;
+        }
+
+        .top .wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            gap: 10px;
+        }
+
+        .top a {
+            color: #fff
+        }
+
+        h1 {
+            font-size: 29px;
+            letter-spacing: -.8px;
+        }
+
+        h2 {
+            font-size: 21px
+        }
+
+        main {
+            padding: 35px 0 70px
+        }
+
+        .box {
+            background: #fff;
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            margin: 16px 0;
+            box-shadow: 0 8px 20px #112D5108;
+        }
+
+        .login {
+            max-width: 460px;
+            margin: 55px auto;
+        }
+
+        .muted {
+            color: var(--muted)
+        }
+
+        label {
+            display: block;
+            font-weight: 700;
+            margin: 12px 0 5px;
+            font-size: 14px;
+        }
+
+        input:not([type=checkbox]),
+        textarea {
+            width: 100%;
+            border: 1px solid #B3C3D8;
+            padding: 12px;
+            border-radius: 10px;
+            font: inherit;
+        }
+
+        textarea {
+            min-height: 85px;
+            resize: vertical;
+        }
+
+        .btn {
+            background: var(--green);
+            border: 0;
+            color: white;
+            padding: 11px 17px;
+            border-radius: 10px;
+            font: inherit;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            filter: brightness(.94)
+        }
+
+        .btn:disabled {
+            opacity: .55
+        }
+
+        .btn.alt {
+            background: #E0EAF8;
+            color: #163B6C;
+        }
+
+        .btn.danger {
+            background: #ab4435
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+        }
+
+        .stat {
+            background: #fff;
+            padding: 21px;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+        }
+
+        .stat strong {
+            display: block;
+            font-size: 32px;
+            color: #183F73;
+        }
+
+        .stat span {
+            color: #576C88;
+            font-size: 13px;
+        }
+
+        .tools {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        .tools input {
+            max-width: 290px
+        }
+
+        .entry {
+            padding: 15px;
+            margin: 12px 0;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #F8FBFE;
+        }
+
+        .entry .head {
+            display: flex;
+            justify-content: space-between;
+            gap: 10px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .entry ul {
+            padding-left: 21px;
+            margin-bottom: 3px;
+        }
+
+        .entry li {
+            padding: 3px 0
+        }
+
+        .code {
+            font-size: 13px;
+            color: #596F8C;
+        }
+
+        .msg {
+            padding: 12px;
+            border-radius: 10px;
+            background: #E2ECF8;
+            color: #183F73;
+            margin-top: 13px;
+        }
+
+        .err {
+            background: #ffeded;
+            color: #923b35;
+        }
+
+        .check {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            margin: 15px 0;
+        }
+
+        .check input {
+            width: 20px;
+            height: 20px;
+        }
+
+        .small {
+            font-size: 12px;
+            color: #5C7390;
+        }
+
+        .hidden {
+            display: none !important
+        }
+
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible,
+        textarea:focus-visible {
+            outline: 3px solid #347CDA;
+            outline-offset: 2px;
+        }
+
+        @media(max-width:750px) {
+            .grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .top h2 {
+                font-size: 16px
+            }
+
+            .box {
+                padding: 17px
+            }
+        }
+
+        @media(max-width:430px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+        }
+    
+
+        /* Paleta própria da confraternização, inspirada no azul e branco de A.A. */
+        :root {
+            --bg: #F5F9FF;
+            --ink: #173655;
+            --green: #1B62A7;
+            --border: #D7E5F4;
+            --muted: #5C7189;
+        }
+        body { background: var(--bg); }
+        .top { background: linear-gradient(110deg, #0B2C59, #195DA3); }
+        .box, .stat { border-color: #D7E5F4; box-shadow: 0 8px 24px #1647750C; }
+        .btn { background: #1B62A7; color: #FFF; }
+        .btn.alt { background: #E5F1FF; color: #16558F; }
+        .btn:hover { filter: brightness(.93); }
+        .stat strong { color: #165EAB; }
+        .stat span, .code, .small { color: #60748B; }
+        .entry { background: #F8FBFF; border-color: #D7E5F4; }
+        input:not([type=checkbox]), textarea { border-color: #B9CDE4; }
+        input:not([type=checkbox]):focus, textarea:focus { border-color: #2C7FC7; }
+        .msg { background: #E4F5E9; color: #175D3B; }
+        .msg.err { background: #FFEDED; color: #923B35; }
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+            outline: 3px solid #4A98DF; outline-offset: 2px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="top">
+        <div class="wrap">
+            <h2>🔒 Painel da organização</h2>
+            <a href="/">← Voltar ao site</a>
+        </div>
+    </header>
+
+    <main class="wrap">
+
+        <section id="login" class="box login">
+            <h1>Acesso dos organizadores</h1>
+            <p class="muted">
+                As informações de participantes são restritas.
+                Entre com a senha gerada no primeiro início do servidor.
+            </p>
+            <form id="loginForm">
+                <label for="usuario">Usuário</label>
+                <input id="usuario" value="admin" autocomplete="username" required>
+
+                <label for="senha">Senha</label>
+                <input id="senha" type="password" autocomplete="current-password" required>
+
+                <p>
+                    <button class="btn" type="submit">Entrar</button>
+                </p>
+                <div id="loginMsg" role="status"></div>
+            </form>
+        </section>
+
+        <section id="painel" class="hidden">
+
+            <div class="tools">
+                <h1>Inscrições e configurações</h1>
+                <button id="sair" class="btn alt" type="button">
+                    Sair
+                </button>
+            </div>
+
+            <div class="grid">
+                <div class="stat">
+                    <strong id="familias">0</strong>
+                    <span>Inscrições</span>
+                </div>
+                <div class="stat">
+                    <strong id="pessoas">0</strong>
+                    <span>Participantes</span>
+                </div>
+                <div class="stat">
+                    <strong id="pagantes">0</strong>
+                    <span>Pagantes (11+)</span>
+                </div>
+                <div class="stat">
+                    <strong id="criancas">0</strong>
+                    <span>Crianças gratuitas</span>
+                </div>
+            </div>
+
+            <div class="box">
+                <h2>Lista para a APCEF</h2>
+                <p class="muted">
+                    Exportação confidencial. A lista contém os CPFs
+                    e o telefone do responsável.
+                    Guarde o arquivo somente em local seguro.
+                </p>
+
+                <div class="tools">
+                    <input id="pesquisa" placeholder="Pesquisar por nome, CPF ou código"
+                        aria-label="Pesquisar inscrições">
+                    <button id="recarregar" class="btn alt" type="button">
+                        Atualizar
+                    </button>
+                    <a class="btn" href="/api/admin/csv">
+                        ⬇ Exportar CSV (Excel)
+                    </a>
+                </div>
+
+                <div id="lista"></div>
+            </div>
+
+            <div class="box">
+                <h2>Configurações do site</h2>
+
+                <form id="ajustesForm">
+                    <label class="check">
+                        <input id="abertas" type="checkbox">
+                        Inscrições abertas
+                    </label>
+
+                    <p class="small">
+                        Encerramento automático inicialmente em
+                        03/12/2026 às 18h. Para alterar o prazo,
+                        edite o campo "encerramento" em data/config.json
+                        com o servidor parado. Confirme antes o prazo
+                        combinado com a APCEF.
+                    </p>
+
+                    <label for="contato">
+                        Nome do contato/organização
+                    </label>
+                    <input id="contato" maxlength="150">
+
+                    <label for="telefone">
+                        Telefone de contato (opcional)
+                    </label>
+                    <input id="telefone" maxlength="60">
+
+                    <label for="email">
+                        E-mail de contato (opcional)
+                    </label>
+                    <input id="email" maxlength="150">
+
+                    <label for="rateio">
+                        Mensagem sobre rateio
+                    </label>
+                    <textarea id="rateio" maxlength="500"></textarea>
+
+                    <label for="fotos">Fotos autorizadas</label>
+                    <p class="small">
+                        Uma por linha: URL HTTPS | Legenda.
+                        Máximo de 6 fotos.
+                        Use somente imagens autorizadas.
+                    </p>
+                    <textarea id="fotos" spellcheck="false"
+                        placeholder="https://meusite.com/foto.jpg | Espaço de confraternização"></textarea>
+
+                    <p>
+                        <button class="btn" type="submit">
+                            Salvar configurações
+                        </button>
+                    </p>
+
+                    <div id="ajustesMsg" role="status"></div>
+                </form>
+            </div>
+
+        </section>
+    </main>
+
+    <script nonce="{{NONCE}}">
+        'use strict';
+
+        const $ = id => document.getElementById(id);
+        let csrf = '';
+        let registros = [];
+
+        function mostrar(id, texto, erro = false) {
+            const elemento = $(id);
+            elemento.textContent = texto;
+            elemento.className = 'msg' + (erro ? ' err' : '');
+        }
+
+        function el(tag, texto, cls) {
+            const n = document.createElement(tag);
+            if (texto !== undefined) n.textContent = texto;
+            if (cls) n.className = cls;
+            return n;
+        }
+
+        async function request(rota, metodo = 'GET', dados) {
+            const opt = {
+                method: metodo,
+                credentials: 'same-origin',
+                headers: {}
+            };
+
+            if (dados !== undefined) {
+                opt.headers['Content-Type'] = 'application/json';
+                opt.body = JSON.stringify(dados);
+            }
+
+            if (metodo !== 'GET' && csrf) {
+                opt.headers['X-CSRF-Token'] = csrf;
+            }
+
+            const r = await fetch(rota, opt);
+            const v = await r.json();
+
+            if (!r.ok) {
+                throw Error(v.erro || 'Falha na solicitação');
+            }
+
+            return v;
+        }
+
+        async function entrar() {
+            const s = await request('/api/admin/session');
+            csrf = s.csrf || '';
+
+            $('login').classList.toggle('hidden', s.autenticado);
+            $('painel').classList.toggle('hidden', !s.autenticado);
+
+            if (s.autenticado) {
+                await Promise.all([
+                    carregar(),
+                    carregarConfig()
+                ]);
+            }
+        }
+
+        $('loginForm').addEventListener('submit', async e => {
+            e.preventDefault();
+
+            try {
+                await request('/api/admin/login', 'POST', {
+                    usuario: $('usuario').value,
+                    senha: $('senha').value
+                });
+
+                $('senha').value = '';
+                await entrar();
+            } catch (e) {
+                mostrar('loginMsg', e.message, true);
+            }
+        });
+
+        $('sair').addEventListener('click', async () => {
+            try {
+                await request('/api/admin/logout', 'POST', {});
+            } catch { }
+
+            csrf = '';
+            $('painel').classList.add('hidden');
+            $('login').classList.remove('hidden');
+        });
+
+        function desenhar() {
+            const digitado = $('pesquisa').value.toLowerCase();
+            const termo = digitado.replace(/\D/g, '') || digitado;
+
+            const lista = $('lista');
+            lista.replaceChildren();
+
+            const filtrados = registros.filter(r =>
+                [
+                    r.codigo,
+                    r.telefone,
+                    ...r.pessoas.flatMap(
+                        p => [p.nome, p.cpf]
+                    )
+                ].some(x => String(x).toLowerCase().includes(termo))
+            );
+
+            if (!filtrados.length) {
+                lista.appendChild(
+                    el('p', 'Nenhuma inscrição encontrada.', 'muted')
+                );
+                return;
+            }
+
+            for (const r of filtrados) {
+                const card = el('div', undefined, 'entry');
+                const cab = el('div', undefined, 'head');
+                const info = el('div');
+
+                info.appendChild(
+                    el('strong', r.pessoas[0].nome)
+                );
+
+                info.appendChild(
+                    el(
+                        'div',
+                        `${r.codigo} • ${new Date(r.criadoEm).toLocaleString('pt-BR')} • Tel: ${r.telefone}`,
+                        'code'
+                    )
+                );
+
+                cab.appendChild(info);
+
+                const excluir = el(
+                    'button',
+                    'Excluir',
+                    'btn danger'
+                );
+
+                excluir.type = 'button';
+
+                excluir.addEventListener('click', async () => {
+                    if (
+                        !confirm(
+                            `Excluir definitivamente a inscrição ${r.codigo}?`
+                        )
+                    ) {
+                        return;
+                    }
+
+                    try {
+                        await request('/api/admin/excluir', 'POST', {
+                            id: r.id
+                        });
+                        await carregar();
+                    } catch (e) {
+                        alert(e.message);
+                    }
+                });
+
+                cab.appendChild(excluir);
+                card.appendChild(cab);
+
+                const ul = el('ul');
+
+                for (const p of r.pessoas) {
+                    ul.appendChild(
+                        el(
+                            'li',
+                            `${p.nome} — CPF ${p.cpf} — ${p.tipo}` +
+                            `${p.idade !== undefined ? ' (' + p.idade + ' anos)' : ''}`
+                        )
+                    );
+                }
+
+                card.appendChild(ul);
+                lista.appendChild(card);
+            }
+        }
+
+        async function carregar() {
+            const d = await request('/api/admin/inscricoes');
+
+            registros = d.registros;
+
+            for (const k of [
+                'familias',
+                'pessoas',
+                'pagantes',
+                'criancas'
+            ]) {
+                $(k).textContent = d[k];
+            }
+
+            desenhar();
+        }
+
+        $('pesquisa').addEventListener('input', desenhar);
+
+        $('recarregar').addEventListener('click', () =>
+            carregar().catch(e => alert(e.message))
+        );
+
+        async function carregarConfig() {
+            const d = await request('/api/config');
+
+            $('abertas').checked = d.abertas;
+
+            for (const k of [
+                'contato',
+                'telefone',
+                'email',
+                'rateio'
+            ]) {
+                $(k).value = d[k] || '';
+            }
+
+            $('fotos').value = (d.fotos || [])
+                .map(p => p.url + ' | ' + p.legenda)
+                .join('\n');
+        }
+
+        $('ajustesForm').addEventListener('submit', async e => {
+            e.preventDefault();
+
+            const fotos = $('fotos').value
+                .split(/\r?\n/)
+                .map(x => x.trim())
+                .filter(Boolean)
+                .map(line => {
+                    const pos = line.indexOf('|');
+
+                    return {
+                        url: (
+                            pos === -1
+                                ? line
+                                : line.slice(0, pos)
+                        ).trim(),
+                        legenda: (
+                            pos === -1
+                                ? 'APCEF/PR'
+                                : line.slice(pos + 1)
+                        ).trim()
+                    };
+                });
+
+            const d = {
+                abertas: $('abertas').checked,
+                fotos
+            };
+
+            for (const k of [
+                'contato',
+                'telefone',
+                'email',
+                'rateio'
+            ]) {
+                d[k] = $(k).value;
+            }
+
+            try {
+                await request(
+                    '/api/admin/ajustes',
+                    'POST',
+                    d
+                );
+
+                mostrar(
+                    'ajustesMsg',
+                    'Configurações salvas com sucesso.'
+                );
+            } catch (e) {
+                mostrar('ajustesMsg', e.message, true);
+            }
+        });
+
+        entrar().catch(e =>
+            mostrar('loginMsg', e.message, true)
+        );
+    </script>
+</body>
+
+</html>
