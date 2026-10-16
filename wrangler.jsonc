@@ -1,0 +1,24 @@
+{
+	"name": "calm-sound-f12a",
+	"main": "./src/worker.js",
+	"compatibility_date": "2026-10-15",
+	"assets": {
+		"directory": "./public",
+		"binding": "ASSETS",
+		"run_worker_first": true,
+		"html_handling": "none"
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "sao-braz-inscricoes",
+			"database_id": "99bba1fe-b016-4833-a0b8-662760f5611d",
+			"remote": true
+		}
+	],
+	"triggers": {
+		"crons": [
+			"0 7 * * 0"
+		]
+	}
+}
